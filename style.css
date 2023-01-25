@@ -1,0 +1,106 @@
+#game-board {
+    width: 500px;
+    height: 500px;
+  }
+  .row {
+    display: flex;
+  }
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+  }
+  #reset-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #game-board {
+    width: 500px;
+    height: 500px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .square {
+    background-image: url("water.jpg");
+    background-size: cover;
+    animation: water-animation 2s infinite;
+  }
+  .square.hit {
+    animation: hit-animation 0.5s;
+  }
+  .square.miss {
+    animation: miss-animation 0.5s;
+  }
+  #reset-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #scoreboard {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  #game-over-screen, #victory-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #play-again-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #loading-screen {
+    position: fixed;
+    top: 0
+    ;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    }
+    
+    @keyframes water-animation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes hit-animation {
+    0% { background-image: url("water.jpg"); }
+    100% { background-image: url("explosion.jpg"); }
+    }
+    
+    @keyframes miss-animation {
+    0% { background-image: url("water.jpg"); }
+    100% { background-image: url("splash.jpg"); }
+    }
+    
+      
